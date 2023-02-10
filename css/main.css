@@ -23,6 +23,9 @@ h5 {
 p {
     font-family: main_font;
 }
+a {
+    font-family: main_font;
+}
 details {
     font-family: main_font;
         border: 1px solid #aaa;
