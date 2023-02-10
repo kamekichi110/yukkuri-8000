@@ -17,16 +17,21 @@ h3 {
 h4 {
     font-family: main_font;
 }
+h5 {
+    font-family: main_font;
+}
 p {
     font-family: main_font;
 }
 details {
+    font-family: main_font;
         border: 1px solid #aaa;
             border-radius: 4px;
                 padding: 0.5em 0.5em 0;
                 }
 
                 summary {
+                    font-family: main_font;
                     font-weight: bold;
                         margin: -0.5em -0.5em 0;
                             padding: 0.5em;
