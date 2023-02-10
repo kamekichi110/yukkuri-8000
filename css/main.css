@@ -26,6 +26,11 @@ p {
 a {
     font-family: main_font;
 }
+iframe {
+    font-family: main_font;
+    width: 70%;
+    height:200px;
+}
 details {
     font-family: main_font;
         border: 1px solid #aaa;
