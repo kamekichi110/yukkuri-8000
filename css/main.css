@@ -3,7 +3,7 @@
     src: url(./DotGothic16-Regular.ttf);
 }
 body {
-    background-color: lightgreen;
+    background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);
 }
 h1 {
     font-family: main_font;
