@@ -3,7 +3,7 @@
     src: url(./DotGothic16-Regular.ttf);
 }
 body {
-    background-image: url(../img/bg.png);
+    background-color: lightgreen;
 }
 h1 {
     font-family: main_font;
@@ -53,3 +53,9 @@ details {
                                     border-bottom: 1px solid #aaa;
                                         margin-bottom: 0.5em;
                                         }
+header {
+    background-color: #96d35f;
+}
+footer {
+    background-color: #aaa;
+}
