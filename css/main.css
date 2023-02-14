@@ -1,6 +1,6 @@
 @font-face {
     font-family: main_font;
-    src: url(./DotGothic16-Regular.ttf);
+    src: url(./Monocraft.ttf);
 }
 body {
     background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);
