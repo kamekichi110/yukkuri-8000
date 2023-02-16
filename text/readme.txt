@@ -8,4 +8,3 @@ https://kamekichi110.github.io/blog.sirokuma/
 と記載するようお願いいたします。
 
 当サイト内画像の著作権表示:sirokuma_110
-以上
