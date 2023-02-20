@@ -1,0 +1,46 @@
+@font-face {
+    font-family: blog;
+    src: url(./JNRfont_n.ttf);
+}
+body {
+    font-family: blog;
+}
+h1 {
+    font-family: blog;
+}
+h2 {
+    font-family: blog;
+}
+h3 {
+    font-family: blog;
+}
+h4 {
+    font-family: blog;
+}
+h5 {
+    font-family: blog;
+}
+h6 {
+    font-family: blog;
+}
+p {
+    font-family: blog;
+}
+img {
+    width: 70%;
+}
+details {
+    font-family: blog;
+}
+summary {
+    font-family: blog;
+}
+a {
+    font-family: blog;
+}
+ul {
+    font-family: blog;
+}
+li {
+    font-family: blog;
+}
