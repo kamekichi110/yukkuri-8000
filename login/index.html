@@ -3,14 +3,15 @@
 <head>
 <meta charset="utf-8">
 <title>JavaScriptによる閲覧制限</title>
+<link rel="stylesheet" href="./css/system.css">
 <script type="text/javascript">
    function gate() {
          var UserInput = prompt("パスワードを入力して下さい:","");
-               location.href = UserInput + ".html";
+               location.href = UserInput + "/index.html";
                   }
                   </script>
                   </head>
                   <body>
-                  <input type="button" value="パスワードを入力して秘密のページへアクセスする" onclick="gate();">
+                  <input type="button" value="ログイン認証" onclick="gate();">
                   </body>
                   </html>
