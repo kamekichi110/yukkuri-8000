@@ -4,6 +4,7 @@
 }
 body {
     font-family: blog;
+    background-color: mintcream;
 }
 h1 {
     font-family: blog;
@@ -43,4 +44,7 @@ ul {
 }
 li {
     font-family: blog;
+}
+header {
+    background-color: aquamarine;
 }
