@@ -1,0 +1,17 @@
+header {
+    position: sticky;
+    top: 2px;
+    left: 0px;
+    width: 24%;
+}
+main {
+    position: fixed;
+    top: 50px;
+    width: 55%;
+}
+footer {
+    position: sticky;
+    top: 2px;
+    right: 0px;
+    width: 20%;
+}
