@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="../../../css/blog.css">
     <link rel="icon" href="../../favicon.ico">
 </head>
+<script type="text/javascript">
+    let submitted = false;
+</script>
+<iframe
+    name="hidden_iframe"
+    id="hidden_iframe"
+    style="display: none"
+    onload="if(submitted){window.location='https://kamekichi110.github.io/blog.sirokuma/blog/redirect/home.html';}"
+></iframe>
 <body>
     <center>
     <header>
@@ -69,9 +78,64 @@
         <strong><p>良い撮影ライフを！！！</p></strong>
     </main>
     <hr>
+    <h3>投稿ID</h3>
+    <br>
+    <p>BID002</p>
+    <hr>
     <footer>
         <strong><a href="../../index.html">投稿一覧に戻る</a></strong>
         <br>
+        <hr>
+        <br>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSe2iiiehZjb5tEszh4w6EpqHYS98AcixNEVGX6Tm15j3pkxyA/formResponse"
+method="POST"
+target="hidden_iframe"
+onsubmit="submitted=true"
+class="c-form"
+>
+<p style="text-align: center; margin: 40px auto">
+	コメント送信フォーム
+</p>
+<form class="c-form">
+	<div class="c-form__item">
+		<label class="c-form__label" for="field-name"
+			>投稿ID<span class="c-form__required">必須</span></label
+		>
+		<input
+name="entry.1447349059"
+			class="c-form__input"
+			id="field-name"
+			placeholder="投稿ID"
+			type="text"
+			required="required"
+		/>
+	</div>
+	<div class="c-form__item">
+		<label class="c-form__label" for="field-name"
+			>名前<span class="c-form__required">必須</span></label
+		>
+		<input
+name="entry.431174765"
+			class="c-form__input"
+			id="field-name"
+			placeholder="名前"
+			type="text"
+			required="required"
+		/>
+	</div>
+	<div class="c-form__item">
+		<label class="c-form__label" for="field-message">コメント入力</label>
+		<textarea
+name="entry.218154379"
+			class="c-form__input"
+			id="field-message"
+			placeholder="コメントを入力"
+		></textarea>
+	</div>
+	<div class="c-form__submit">
+		<button type="submit">コメント送信(投稿一覧に戻ります)</button>
+	</div>
+</form>
         <br>
         <strong><p>twitter使ってます</p><a href="https://twitter.com/sirokuma2468">watch</a></strong>
     </footer>
