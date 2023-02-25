@@ -1,0 +1,11 @@
+@font-face {
+    font-family: sys;
+    src: url(../../font/JNRfont_n.ttf);
+}
+div {
+    font-family: sys;
+    color: darkgreen;
+}
+body {
+    background-color: aquamarine;
+}
