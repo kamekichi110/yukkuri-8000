@@ -1,0 +1,43 @@
+@font-face {
+    font-family: ui;
+    src: url(../font-ttf/KiwiMaru-Regular.ttf);
+}
+h1 {
+    font-family: ui;
+}
+h2 {
+    font-family: ui;
+}
+h3 {
+    font-family: ui;
+}
+h4 {
+    font-family: ui;
+}
+h5 {
+    font-family: ui;
+}
+h6 {
+    font-family: ui;
+}
+p {
+    font-family: ui;
+}
+a {
+    font-family: ui;
+}
+details {
+    font-family: ui;
+}
+summary {
+    font-family: ui;
+}
+.icon {
+    width: 10%;
+}
+.info {
+    width: 12%;
+}
+.image_main {
+    width: 66%;
+}
