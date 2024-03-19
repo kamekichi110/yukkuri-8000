@@ -12,12 +12,16 @@ header {
 }
 article {
     width: 96%;
+    height: 480px;
+    overflow-y: scroll;
     margin: 0 auto;
     border-radius: 12px;
     background-color: aquamarine;
 }
 main {
     width: 75%;
-    height: 480px;
-    background-color: paleorage;
+    background-color: antiquewhite;
+}
+side {
+    width: 25%;
 }
