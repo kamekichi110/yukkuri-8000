@@ -26,7 +26,7 @@ let currentModel, facemesh;
 		view: document.getElementById("my-live2d"),
 		autoStart: true,
 		backgroundAlpha: 0,
-		backgroundColor: 0xffffff,
+		backgroundColor: 0x00ff00,
 		resizeTo: window
 	});
 
