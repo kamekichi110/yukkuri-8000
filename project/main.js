@@ -26,7 +26,9 @@ let currentModel, facemesh;
 		view: document.getElementById("my-live2d"),
 		autoStart: true,
 		backgroundAlpha: 0,
-		backgroundColor: null,
+		transparent: true, // 背景色を透明にする場合はtrue
+                resolution: 2, // retinaディスプレイに対応する場合は 2
+                backgroundColor: 0x000000, // transparent: false の場合の背景色を指定する
 		resizeTo: window
 	});
 	// 3, Live2Dモデルをロードする
@@ -34,7 +36,7 @@ let currentModel, facemesh;
 	currentModel.scale.set(0.2);
 	currentModel.interactive = true;
 	currentModel.anchor.set(0.5, 0.5);
-	currentModel.position.set(window.innerWidth * 0.5, window.innerHeight * 0.8);
+	currentModel.position.set(window.innerWidth * 0.5, window.innerHeight * 0.5);
 
 	// 4, Live2Dモデルをドラッグ可能にする
 	currentModel.on("pointerdown", e => {
