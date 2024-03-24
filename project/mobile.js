@@ -17,9 +17,18 @@ function onTouchMove(event) {
     );
     if (distance < startDistance) {
       console.log('ピンチイン操作が検出されました。');
-    }
+      event.preventDefault();
+		  currentModel.scale.set(
+			clamp(currentModel.scale.x + event.deltaY * -0.001, -0.5, 10)
+		);
+    } else if (distance > startDistance) {
+      console.log('ピンチアウト操作が検出されました');
+      event.preventDefault();
+		  currentModel.scale.set(
+			clamp(currentModel.scale.x - event.deltaY * -0.001, -0.5, 10)
+		);
   }
 }
 
-document.addEventListener('touchstart', onTouchStart);
-document.addEventListener('touchmove', onTouchMove);
+document.document.querySelector("#my-live2d").addEventListener('touchstart', onTouchStart);
+document.document.querySelector("#my-live2d").addEventListener('touchmove', onTouchMove);
