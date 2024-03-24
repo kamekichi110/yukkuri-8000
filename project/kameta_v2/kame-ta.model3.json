@@ -1,9 +1,9 @@
 {
 	"Version": 3,
 	"FileReferences": {
-		"Moc": "kame-ta.moc3",
+		"Moc": "https://yt.kame-ta.f5.si/project/kameta_v2/kame-ta.moc3",
 		"Textures": [
-			"kame-ta.2048/texture_00.png"
+			"https://yt.kame-ta.f5.si/project/kameta_v2/kame-ta.2048/texture_00.png"
 		],
 		"DisplayInfo": "kame-ta.cdi3.json"
 	},
