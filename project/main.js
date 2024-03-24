@@ -12,7 +12,7 @@ const {
 } = Kalidokit;
 
 // 1, Live2Dモデルへのパスを指定する
-const modelUrl = "https://yt.kame-ta.f5.si/project/kameta_v2/kame-ta.model3.json";
+const modelUrl = "./kameta_v2/kame-ta.model3.json";
 const videoElement = document.getElementById("my-video");
 const guideCanvas = document.getElementById("my-guides");
 
