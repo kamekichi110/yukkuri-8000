@@ -1,11 +1,11 @@
 {
 	"Version": 3,
 	"FileReferences": {
-		"Moc": "https://yt.kame-ta.f5.si/project/kameta_v2/kame-ta.moc3",
+		"Moc": "./kame-ta.moc3",
 		"Textures": [
-			"https://yt.kame-ta.f5.si/project/kameta_v2/kame-ta.2048/texture_00.png"
+			"./kame-ta.2048/texture_00.png"
 		],
-		"DisplayInfo": "https://yt.kame-ta.f5.si/project/kameta_v2/kame-ta.cdi3.json"
+		"DisplayInfo": "./kame-ta.cdi3.json"
 	},
 	"Groups": [
 		{
