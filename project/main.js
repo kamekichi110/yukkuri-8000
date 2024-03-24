@@ -33,7 +33,7 @@ let currentModel, facemesh;
 	});
 	// 3, Live2Dモデルをロードする
 	currentModel = await Live2DModel.from(modelUrl, { autoInteract: false });
-	currentModel.scale.set(0.1);
+	currentModel.scale.set(0.2);
 	currentModel.interactive = true;
 	currentModel.anchor.set(0.5, 0.5);
 	currentModel.position.set(window.innerWidth * 0.5, window.innerHeight * 0.5);
