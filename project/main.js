@@ -29,7 +29,12 @@ let currentModel, facemesh;
 		backgroundColor: 0x00ff00,
 		resizeTo: window
 	});
-
+	// 大きさ設定
+	document.getElementById('setSize').addEventListener('change', event => {
+		var setSize = event.value;
+		currentModel.scale.set(setSize);
+		console.log('model size:' + setSize);
+	});
 	// 3, Live2Dモデルをロードする
 	currentModel = await Live2DModel.from(modelUrl, { autoInteract: false });
 	currentModel.scale.set(0.2);
