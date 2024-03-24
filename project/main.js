@@ -27,7 +27,7 @@ let currentModel, facemesh;
 		autoStart: true,
 		backgroundAlpha: 0,
 		transparent: true, // 背景色を透明にする場合はtrue
-                resolution: 2, // retinaディスプレイに対応する場合は 2
+                resolution: 1, // retinaディスプレイに対応する場合は 2
                 backgroundColor: 0x000000, // transparent: false の場合の背景色を指定する
 		resizeTo: window
 	});
