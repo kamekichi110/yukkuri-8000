@@ -34,3 +34,33 @@ video {
 	width: 100%; height: auto;
 	z-index: 1;
 }
+.setting-icon {
+	position: absolute;
+	top: 0px;
+	right: 8px;
+}
+span.set {
+	font-size: 64px;
+}
+div.modal {
+	position: absolute;
+	width: 60%;
+	height: 50%;
+	background: black;
+	border-radius: 32px;
+	top: 8px;
+	left: 20%;
+	right: 20%;
+	color: white;
+	text-align: center;
+	opacity: 0.4;
+	display: none;
+}
+input.num {
+	width: 64px;
+}
+img#mic,
+img#desk {
+	position: absolute;
+	width: 120px;
+}
