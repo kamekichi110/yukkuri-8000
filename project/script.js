@@ -20,6 +20,24 @@ const sh = window.innerHeight;
 const desk = document.getElementById("desk");
 const mic = document.getElementById("mic");
 
+function SetNum(id, change, bar, info) {
+	var elem = document.getElementById(id);
+	var val = document.getElementById(change);
+	var range = document.getElementById(bar)
+	if (info = 0) {
+		elem.style.top = val.value + "px";
+		range.value = val.value;
+	} else if (info = 1) {
+		elem.style.left = val.value + "px";
+		range.value = val.value;
+	} else if (info = 2) {
+		elem.style.width = val.value + "px";
+		range.value = val.value;
+	} else {
+		window.alert('error!')
+	}
+}
+
 // 値をセットする関数
 const setDeskTopValue = (e) => {
 	deskTopOutput.value = e.target.value;

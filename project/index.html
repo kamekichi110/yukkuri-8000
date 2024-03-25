@@ -16,6 +16,7 @@
 		<script src="./js/cam.js"></script>
 		<!-- Kalidokit -->
 		<script src="./js/kalido.js"></script>
+		<link rel="manifest" href="./app/manifest.webmanifest">
 		<script>
 			if ('serviceWorker' in navigator) {
 			  window.addEventListener('load', () => {
@@ -50,25 +51,25 @@
 			<p>desk.png<br>
 				left:<input type="range" min="-500" max="4800" id="deskLeftSet">
 				<br>
-				<input type="number" id="deskLeft" class="num"></input>px<br>
+				<input type="number" onchange="SetNum('desk', 'deskLeft', 'deskLeftSet', 1)" id="deskLeft" class="num"></input>px<br>
 				top:<input type="range" min="-500" max="4800" id="deskTopSet">
 				<br>
-				<input type="number" id="deskTop" class="num"></input>px
+				<input type="number" onchange="SetNum('desk', 'deskTop', 'deskTopSet', 0)" id="deskTop" class="num"></input>px
 				<br>width:<input type="range" min="0" max="4800" id="deskSize">
 				<br>
-				<input type="number" id="deskValue" class="num"></input>px
+				<input type="number" onchange="SetNum('desk', 'deskValue', 'deskSize', 2)" id="deskValue" class="num"></input>px
 			</p>
 			<hr>
 			<p>mic.png<br>
 				left:<input type="range" min="-500" max="4800" id="micLeftSet">
 				<br>
-				<input type="number" id="micLeft" class="num"></input>px
+				<input type="number" onchange="SetNum('mic', 'micLeft', 'micLeftSet', 1)" id="micLeft" class="num"></input>px
 				<br>top:<input type="range" min="-500" max="4800" id="micTopSet">
 				<br>
-				<input type="number" id="micTop" class="num"></input>px
+				<input type="number" onchange="SetNum('mic', 'micTop', 'micTopSet', 0)" id="micTop" class="num"></input>px
 				<br>width:<input type="range" min="0" max="4800" id="micSize">
 				<br>
-				<input type="number" id="micValue" class="num"></input>px
+				<input type="number" onchange="SetNum('mic', 'micValue', 'micSize', 2)" id="micValue" class="num"></input>px
 			</p>
 			<hr>
 			<button onclick="document.getElementById('modal1').style.display='none';">Close</button>

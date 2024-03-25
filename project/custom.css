@@ -63,4 +63,6 @@ img#mic,
 img#desk {
 	position: absolute;
 	width: 120px;
+	top: 8px;
+	left: 8px;
 }
