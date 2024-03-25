@@ -34,9 +34,21 @@ function SetNum(id, change, bar, info) {
 		elem.style.width = val.value + "px";
 		range.value = val.value;
 	} else {
-		window.alert('error!')
+		window.alert('error!');
 	}
 }
+
+const modelSizeChange = (e) => {
+	e.preventDefault();
+	currentModel.scale.set(
+		clamp(currentModel.scale.x + e.target.value * -0.001, -0.5, 10)
+	);
+	setTimeout(() => {
+		e.target.value = 0;
+	}, 100);
+}
+
+document.getElementById('model-size').addEventListener('input', modelSizeChange);
 
 // 値をセットする関数
 const setDeskTopValue = (e) => {

@@ -45,7 +45,7 @@ span.set {
 div.modal {
 	position: absolute;
 	width: 60%;
-	height: 50%;
+	height: auto;
 	background: black;
 	border-radius: 32px;
 	top: 8px;
