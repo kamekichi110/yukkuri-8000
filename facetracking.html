@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="manifest" href="app.json">
+    <link rel="manifest" href="./project/app.json">
     		<script>
                 			if ('serviceWorker' in navigator) {
                             			  window.addEventListener('load', () => {
-                                          				navigator.serviceWorker.register('./app/sw.js')
+                                          				navigator.serviceWorker.register('./project/app/sw.js')
                                                         				  .then(registration => {
                                                                           					console.log('Service Worker registered:', registration);
                                                                                             				  })
