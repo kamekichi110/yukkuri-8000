@@ -84,6 +84,10 @@ document.querySelector("#my-live2d").addEventListener("touchmove", e => {
         );
         const deltaDistance = currentDistance - initialDistance;
         const scaleFactor = 0.01; // Adjust this value based on sensitivity
+		var scaleSet = deltaDistance * scaleFactor;
+		var scaleValue = scaleSet * scaleSet;
+		var scSet = currentModel.scale.x * currentModel.scale.x;
+		if (scaleValue < scSet) {
         currentModel.scale.set(
             clamp(
                 currentModel.scale.x + deltaDistance * scaleFactor,
@@ -92,7 +96,12 @@ document.querySelector("#my-live2d").addEventListener("touchmove", e => {
             )
         );
         initialDistance = currentDistance;
-    }
+		console.log('scale:' + initialDistance);
+    } else {
+		initialDistance = currentDistance;
+		console.log('scale:' + initialDistance);
+	}
+}
 });
 
 	// 6, Live2Dモデルを配置する

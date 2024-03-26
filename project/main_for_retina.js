@@ -63,6 +63,45 @@ let currentModel, facemesh;
 			clamp(currentModel.scale.x + event.deltaY * -0.001, -0.5, 10)
 		);
 	});
+	let initialDistance = 0;
+
+	document.querySelector("#my-live2d").addEventListener("touchstart", e => {
+		if (e.touches.length === 2) {
+			initialDistance = Math.hypot(
+				e.touches[0].clientX - e.touches[1].clientX,
+				e.touches[0].clientY - e.touches[1].clientY
+			);
+		}
+	});
+	
+	document.querySelector("#my-live2d").addEventListener("touchmove", e => {
+		e.preventDefault();
+		if (e.touches.length === 2) {
+			const currentDistance = Math.hypot(
+				e.touches[0].clientX - e.touches[1].clientX,
+				e.touches[0].clientY - e.touches[1].clientY
+			);
+			const deltaDistance = currentDistance - initialDistance;
+			const scaleFactor = 0.01; // Adjust this value based on sensitivity
+			var scaleSet = deltaDistance * scaleFactor;
+			var scaleValue = scaleSet * scaleSet;
+			var scSet = currentModel.scale.x * currentModel.scale.x;
+			if (scaleValue < scSet) {
+			currentModel.scale.set(
+				clamp(
+					currentModel.scale.x + deltaDistance * scaleFactor,
+					-0.5,
+					10
+				)
+			);
+			initialDistance = currentDistance;
+			console.log('scale:' + initialDistance);
+		} else {
+			initialDistance = currentDistance;
+			console.log('scale:' + initialDistance);
+		}
+	}
+	});
 
 	// 6, Live2Dモデルを配置する
 	app.stage.addChild(currentModel);
