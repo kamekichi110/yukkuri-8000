@@ -112,3 +112,45 @@ function modalSet() {
 	};
 }
 setting.addEventListener("click", modal);
+
+
+let canvas = document.getElementById('my-live2d');
+let video = document.getElementById('cv-video');
+let startButton = document.getElementById('start-recording');
+let stopButton = document.getElementById('stop-recording');
+let downloadLink = document.getElementById('download-link');
+
+let stream;
+let recorder;
+let chunks = [];
+
+startButton.addEventListener('click', () => {
+    navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } })
+        .then((mediaStream) => {
+            stream = mediaStream;
+            recorder = new MediaRecorder(stream, { mimeType: 'video/webm; codecs=vp9' });
+            recorder.ondataavailable = (e) => {
+                chunks.push(e.data);
+            };
+            recorder.onstop = () => {
+                let blob = new Blob(chunks, { type: 'video/mp4' });
+                video.src = window.URL.createObjectURL(blob);
+                downloadLink.href = video.src;
+                downloadLink.style.display = 'block';
+            };
+            recorder.start();
+            startButton.disabled = true;
+            stopButton.disabled = false;
+        })
+        .catch((error) => {
+            console.error('getUserMedia error:', error);
+        });
+});
+
+stopButton.addEventListener('click', () => {
+    recorder.stop();
+    stream.getTracks().forEach(track => track.stop());
+    chunks = [];
+    startButton.disabled = false;
+    stopButton.disabled = true;
+});
