@@ -113,44 +113,53 @@ function modalSet() {
 }
 setting.addEventListener("click", modal);
 
+// Canvasとvideo要素を自動的に取得する
+const canvas = document.querySelector('canvas#my-live2d');
+const video = document.querySelector('video#cv-video');
 
-let canvas = document.getElementById('my-live2d');
-let video = document.getElementById('cv-video');
-let startButton = document.getElementById('start-recording');
-let stopButton = document.getElementById('stop-recording');
-let downloadLink = document.getElementById('download-link');
+// 録画ボタンと停止ボタンを取得する
+const startButton = document.getElementById('start-recording');
+const stopButton = document.getElementById('stop-recording');
+const downloadLink = document.getElementById('download-link');
 
 let stream;
 let recorder;
 let chunks = [];
 
+// 録画開始ボタンのクリックイベント
 startButton.addEventListener('click', () => {
-    navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } })
+    // ユーザーのカメラからビデオストリームを取得する
+    navigator.mediaDevices.getUserMedia({ video: true })
         .then((mediaStream) => {
             stream = mediaStream;
-            recorder = new MediaRecorder(stream, { mimeType: 'video/webm; codecs=vp9' });
+            // MediaRecorderを初期化する
+            recorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
             recorder.ondataavailable = (e) => {
                 chunks.push(e.data);
             };
             recorder.onstop = () => {
-                let blob = new Blob(chunks, { type: 'video/mp4' });
+                // 録画が停止された時の処理
+                let blob = new Blob(chunks, { type: 'video/webm' });
                 video.src = window.URL.createObjectURL(blob);
+                // 動画ダウンロードリンクを設定する
                 downloadLink.href = video.src;
                 downloadLink.style.display = 'block';
             };
-            recorder.start();
-            startButton.disabled = true;
-            stopButton.disabled = false;
+            // 録画を開始する（FPSは30）
+            recorder.start(1000 / 30);
+            startButton.disabled = true; // 録画開始ボタンを無効化
+            stopButton.disabled = false; // 録画停止ボタンを有効化
         })
         .catch((error) => {
             console.error('getUserMedia error:', error);
         });
 });
 
+// 録画停止ボタンのクリックイベント
 stopButton.addEventListener('click', () => {
-    recorder.stop();
-    stream.getTracks().forEach(track => track.stop());
-    chunks = [];
-    startButton.disabled = false;
-    stopButton.disabled = true;
+    recorder.stop(); // 録画を停止する
+    stream.getTracks().forEach(track => track.stop()); // ストリームを停止する
+    chunks = []; // チャンクをクリアする
+    startButton.disabled = false; // 録画開始ボタンを有効化
+    stopButton.disabled = true; // 録画停止ボタンを無効化
 });
