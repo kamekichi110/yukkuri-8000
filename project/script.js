@@ -38,17 +38,6 @@ function SetNum(id, change, bar, info) {
 	}
 }
 
-const modelSizeChange = (e) => {
-	e.preventDefault();
-	currentModel.scale.set(
-		clamp(currentModel.scale.x + e.target.value * -0.001, -0.5, 10)
-	);
-	setTimeout(() => {
-		e.target.value = 0;
-	}, 100);
-}
-
-document.getElementById('model-size').addEventListener('input', modelSizeChange);
 
 // 値をセットする関数
 const setDeskTopValue = (e) => {
