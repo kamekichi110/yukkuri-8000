@@ -48,7 +48,10 @@
 		<img id="desk" src="https://yt.kame-ta.f5.si/project/img/desk.png">
 		<img id="mic" src="https://yt.kame-ta.f5.si/project/img/mic.png">
 		<div class="modal" id="modal1">
-			<p>desk.png<br>
+<video id="cv-video" width="320" height="180" controls></video><hr>
+<button id="start-recording">Start Recording</button>
+<button id="stop-recording">Stop Recording</button><br>
+<a id="download-link" download="recorded-video.mp4" style="display: block;">Download Video</a>			<p>desk.png<br>
 				left:<input type="range" min="-500" max="4800" id="deskLeftSet">
 				<br>
 				<input type="number" onchange="SetNum('desk', 'deskLeft', 'deskLeftSet', 1)" id="deskLeft" class="num"></input>px<br>
