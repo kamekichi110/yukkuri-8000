@@ -94,8 +94,21 @@ const modal = () => {
 	var modalElem = document.getElementById("modal1");
 	if ((modalElem.style.display = "none")) {
 		document.getElementById("modal1").style.display = "block";
+	} else if (modalElem.style.display = "block") {
+		document.getElementById('modal1').style.display = "none";
 	} else {
 		console.error = "error (modal script)";
 	}
 };
+
+function modalSet() {
+	var modalElem = document.getElementById('modal1');
+	if (modalElem.style.display = "none") {
+		document.getElementById('modal1').style.display = "block";
+	} else if (modalElem.style.display = "block") {
+		document.getElementById('modal1').style.display = "none";
+	} else {
+		console.error = "error (modal script)";
+	};
+}
 setting.addEventListener("click", modal);
