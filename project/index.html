@@ -16,6 +16,7 @@
 		<script src="./js/cam.js"></script>
 		<!-- Kalidokit -->
 		<script src="./js/kalido.js"></script>
+		<script src="./video.js"></script>
 		<link rel="manifest" href="./app/manifest.webmanifest">
 		<script>
 			if ('serviceWorker' in navigator) {
@@ -38,6 +39,8 @@
 			<video id="my-video"></video>
 			<canvas id="my-guides"></canvas>
 		</div>
+		<video id="bg-video" autoplay></video>
+		<span id="video-statement" style="position: absolute; bottom: 2px; right: 2px;"></span>
 		<!-- Live2D -->
 		<canvas id="my-live2d"></canvas>
 		<div class="setting-icon" id="set" onclick="modalSet()">
@@ -54,6 +57,17 @@
 <button id="stop-recording">Stop Recording</button><br>
 <a id="download-link" download="recorded-video.mp4" style="display: block;">Download Video</a>
 			</div>
+			  <select id="sourceSelect">
+				    <option value="none">選択しない</option>
+					    <option value="file">ファイルから</option>
+						    <option value="camera">カメラから</option>
+							  </select>
+							    <select id="cameraSelect" style="display:none;"></select>
+								  <input type="file" id="fileInput" accept="video/*" style="display:none;">
+								  <select id="v-set">
+									<option value="true">video mute</option>
+									<option value="false">video not mute</option>
+								  </select>
 				<p>desk.png<br>
 				left:<input type="range" min="-500" max="4800" id="deskLeftSet">
 				<br>
