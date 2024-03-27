@@ -80,7 +80,7 @@
 			<hr>
 			<button onclick="document.getElementById('modal1').style.display='none';">Close</button>
 			<br>
-			<input type="range" id="model-size" min="-0.5" max="10" step="0.01" value="1">
+			<input type="range" id="model-size" min="-0.5" max="10" step="0.001" value="1">
 			<br>
 			<p><input type="number" id="current-size" onchange="setTimeout(() => {document.getElementbyId('model-size').value = document.getElementById('current-size').value}, 100);">px</p>
 			<br><hr>
