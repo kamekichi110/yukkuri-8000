@@ -103,6 +103,15 @@ let currentModel, facemesh;
 	}
 	});
 
+	const modelSizeInput = document.querySelector("#model-size");
+const currentSizeSpan = document.querySelector("#current-size");
+
+modelSizeInput.addEventListener("input", function() {
+    const newSize = parseFloat(modelSizeInput.value);
+    currentModel.scale.set(clamp(newSize, -0.5, 10));
+    currentSizeSpan.textContent = "Current Size: " + newSize.toFixed(2);
+});
+
 	// 6, Live2Dモデルを配置する
 	app.stage.addChild(currentModel);
 
