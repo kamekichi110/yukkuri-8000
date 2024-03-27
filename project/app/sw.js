@@ -28,7 +28,8 @@ const filesToCache = [
   './app/icon-256x256.png',
   './app/icon-384x384.png',
   './app/icon-512x512.png',
-  './app/manifest_for_retina.webmanifest'
+  './app/manifest_for_retina.webmanifest',
+  './video.js'
 ];
 
 self.addEventListener('install', event => {
