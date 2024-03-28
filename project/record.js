@@ -23,15 +23,12 @@ function startRecording() {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         document.body.appendChild(a);
-        a.style = 'display: none';
+        a.style = 'display: block; color: white;';
         const timestamp = new Date().toISOString().slice(0, -5).replace(/[-T:/]/g, '');
         a.href = url;
         a.download = `recording_${timestamp}.mp4`;
         a.click();
         window.URL.revokeObjectURL(url);
-        setTimeout(() => {
-            a.href = "";
-        }, 500);
     };
 
     mediaRecorder.start();
