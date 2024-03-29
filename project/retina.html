@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="custom.css"/>
@@ -60,10 +60,10 @@
 																																																																										<option value="false">video not mute</option>
 																																																																																		  </select>
 																																																																																		  <hr>
-																																																																																		  <br>
+																																																																																		  <br><div style="display: none;">
 																																																																																		  <button id="rec-start">Start Recording</button>
 																																																																																		  <button id="rec-stop">Stop & Download</button>
-																																																																																		  <br><hr><br>
+																																																																																		  <br><hr></div><br>
 
 			<p>desk.png<br>
 				left:<input type="range" min="-500" max="4800" id="deskLeftSet">
@@ -103,6 +103,7 @@
 			<button onclick="setValueInfo()">RESET</button>
 			<script type="module" src="main_for_retina.js"></script>
 			<script src="./script.js"></script>
+			<script src="./video.js"></script>
 		</div>
 	</body>
 </html>
