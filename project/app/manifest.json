@@ -1,0 +1,18 @@
+{
+ "name": "かめトラッカー",
+ "short_name": "かめ太Live2D",
+ "start_url": "https://yt.kame-ta.f5.si/project",
+ "description": "かめ太のLive2Dをフェイストラッキングします。",
+ "display": "standalone",
+ "orientation": "any",
+ "theme_color": "#00ff00",
+ "background_color": "00ff00",
+ "icons": [
+  {
+   "src": "https://yt.kame-ta.f5.si/img/icon.png",
+   "sizes": "256x256",
+   "type": "image/png"
+  }
+ ],
+ "scope": "/"
+}

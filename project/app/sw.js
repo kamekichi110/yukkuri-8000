@@ -1,74 +1,32 @@
-// service-worker.js
-
-const cacheName = 'my-site-cache-v1';
-const filesToCache = [
-  './img/desk.png',
-  './img/mic.png',
-  './kameta_v2/kame-ta.2048/texture_00.png',
-  './kameta_v2/kame-ta.cdi3.json',
-  './kameta_v2/kame-ta.moc3',
-  './kameta_v2/kame-ta.model3.json',
-  './custom.css',
-  './index.html',
-  './retina.html',
-  './main.js',
-  './main_for_retina.js',
-  './script.js',
-  './js/cam.js',
-  './js/face.js',
-  './js/draw.js',
-  './js/kalido.js',
-  './js/live2d_core.min.js',
-  './js/live2d.min.js',
-  './js/pixi_index.js',
-  './js/pixi.min.js',
-  './app/manifest.webmanifest',
-  './app/sw.js',
-  './app/icon-192x192.png',
-  './app/icon-256x256.png',
-  './app/icon-384x384.png',
-  './app/icon-512x512.png',
-  './app/manifest_for_retina.webmanifest',
-  './video.js'
-];
-
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(cacheName)
-      .then(cache => {
-        return cache.addAll(filesToCache);
-      })
-  );
+self.addEventListener('install', function(event) {
+const indexPage = new Request('https://yt.kame-ta.f5.si/project');
+event.waitUntil(
+fetch(indexPage).then(function(response) {
+return caches.open('pwabuilder-offline').then(function(cache) {
+console.log('[PWA Builder] Cached index page during Install'+ response.url);
+return cache.put(indexPage, response);
 });
-
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.open(cacheName)
-      .then(cache => {
-        return cache.match(event.request)
-          .then(response => {
-            const fetchPromise = fetch(event.request)
-              .then(networkResponse => {
-                cache.put(event.request, networkResponse.clone());
-                return networkResponse;
-              })
-              .catch(() => {
-                return caches.match(event.request);
-              });
-
-            return response || fetchPromise;
-          });
-      })
-  );
+}));
 });
-
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.filter(cache => cache !== cacheName)
-          .map(cache => caches.delete(cache))
-      );
-    })
-  );
+self.addEventListener('fetch', function(event) {
+const updateCache = function(request){
+return caches.open('pwabuilder-offline').then(function (cache) {
+return fetch(request).then(function (response) {
+console.log('[PWA Builder] add page to offline'+response.url)
+return cache.put(request, response);
 });
+});
+};
+event.waitUntil(updateCache(event.request));
+event.respondWith(
+fetch(event.request).catch(function(error) {
+console.log( '[PWA Builder] Network request Failed. Serving content from cache: ' + error );
+return caches.open('pwabuilder-offline').then(function (cache) {
+return cache.match(event.request).then(function (matching) {
+var report =  !matching || matching.status == 404?Promise.reject('no-match'): matching;
+return report
+});
+});
+})
+);
+})
