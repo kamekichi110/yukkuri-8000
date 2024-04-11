@@ -1,0 +1,15 @@
+{
+    "name": "hdd image data",
+    "version": "1.0.0",
+    "description": "make hdd image",
+    "main": "hdd.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Sirokuma_8110F",
+    "license": "MIT",
+    "dependencies": {
+      "fs": "0.0.1-security"
+    }
+  }
+  
